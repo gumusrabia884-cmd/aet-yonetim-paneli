@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AET Yönetim Paneli</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#0b2033,#17658b);color:#172033;min-height:100vh}
+.wrap{min-height:100vh;display:grid;place-items:center;padding:24px}
+.panel{width:min(1000px,100%);background:#f6f8fb;border-radius:26px;padding:34px;box-shadow:0 20px 60px #0003}
+.head{text-align:center;margin-bottom:28px}.head h1{margin:0;font-size:34px}.head p{color:#667085;margin:8px 0}.clock{font-weight:700;color:#1479a9;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid #e5e7eb;border-radius:20px;padding:26px;text-decoration:none;color:#172033;transition:.2s;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #0002}.icon{font-size:44px}.card h2{margin:14px 0 8px}.card p{color:#667085;line-height:1.5;margin:0}.go{margin-top:22px;font-weight:800;color:#1479a9}
+.foot{text-align:center;color:#667085;font-size:12px;margin-top:24px}
+@media(max-width:750px){.grid{grid-template-columns:1fr}.panel{padding:22px}.head h1{font-size:27px}.card{min-height:170px}}
+</style>
+</head>
+<body>
+<div class="wrap"><main class="panel">
+  <div class="head">
+    <h1>AET Yönetim Paneli</h1>
+    <p>Nakit akışı, depo ve ofis giderleri tek ekranda.</p>
+    <div id="clock" class="clock"></div>
+  </div>
+  <div class="grid">
+    <a class="card" href="https://aet-nakit-akis.netlify.app" target="_blank" rel="noopener">
+      <div><div class="icon">💰</div><h2>AET Nakit Akış Pro</h2><p>Gelir, gider, tahsilat ve nakit akış yönetimi.</p></div><div class="go">Sistemi Aç →</div>
+    </a>
+    <a class="card" href="https://gumusrabia884-cmd.github.io/aet-smartstock/" target="_blank" rel="noopener">
+      <div><div class="icon">📦</div><h2>AET SmartStock</h2><p>Ürün, stok, teslim, iade ve kritik stok takibi.</p></div><div class="go">Sistemi Aç →</div>
+    </a>
+    <a class="card" href="https://aet-giderplus.netlify.app" target="_blank" rel="noopener">
+      <div><div class="icon">🧾</div><h2>AET GiderPlus</h2><p>Personel ve ofis harcamaları, fişler ve aylık raporlar.</p></div><div class="go">Sistemi Aç →</div>
+    </a>
+  </div>
+  <div class="foot">AET Yönetim Sistemleri</div>
+</main></div>
+<script>
+function tick(){const d=new Date();document.getElementById('clock').textContent=d.toLocaleDateString('tr-TR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'})+' • '+d.toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
